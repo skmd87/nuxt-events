@@ -2,6 +2,22 @@
 
 
 
+## v1.0.5
+
+[compare changes](https://github.com/skmd87/nuxt-events/compare/v1.0.4...v1.0.5)
+
+### 🩹 Fixes
+
+- Typescript error in template ([19a0bc7](https://github.com/skmd87/nuxt-events/commit/19a0bc7))
+
+### 🏡 Chore
+
+- **release:** V1.0.4 ([7fb7f6c](https://github.com/skmd87/nuxt-events/commit/7fb7f6c))
+
+### ❤️ Contributors
+
+- Samer Draidi <s.aldraidi@ingotbrokers.com>
+
 ## v1.0.4
 
 [compare changes](https://github.com/skmd87/nuxt-events/compare/v1.0.2...v1.0.4)
