@@ -1,6 +1,6 @@
 import { useNuxtApp } from "#app";
 
-export function useEvent() {
+export function useEvents() {
     const { $on, $emit } = useNuxtApp();
     return {
         emit: $emit,

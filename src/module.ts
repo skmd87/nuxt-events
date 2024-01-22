@@ -5,19 +5,19 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
+    name: 'nuxt-events',
     configKey: 'myModule'
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup (options, nuxt) {
+  setup (/*options, nuxt*/) {
     const resolver = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'))
       addImports({
-        name: 'useEvent',
-        as: 'useEvent',
+        name: 'useEvents',
+        as: 'useEvents',
         from: resolver.resolve('./runtime/composable'),
       })
       addTypeTemplate({

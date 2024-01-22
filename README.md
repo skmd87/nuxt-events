@@ -83,7 +83,7 @@ declare module "#NuxtEvents" {
 		'test-event': string;
 	}
 }
-const { emit, on } = useEvent()
+const { emit, on } = useEvents()
 
 const { $emit } = useNuxtApp()
 
