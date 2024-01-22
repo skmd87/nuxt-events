@@ -6,7 +6,7 @@ export interface ModuleOptions {}
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-events',
-    configKey: 'myModule'
+    configKey: 'nuxtEvents'
   },
   // Default configuration options of the Nuxt module
   defaults: {},
@@ -21,7 +21,7 @@ export default defineNuxtModule<ModuleOptions>({
         from: resolver.resolve('./runtime/composable'),
       })
       addTypeTemplate({
-        src: resolver.resolve('./types/#NuxtEvents.d.ts'),
+        src: resolver.resolve('./runtime/#NuxtEvents.d.ts'),
         filename: '#NuxtEvents.d.ts',
         options: {}
       })
