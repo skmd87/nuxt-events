@@ -3,7 +3,7 @@ Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
 - Name: My Module
-- Package name: my-module
+- Package name: @skmd87/nuxt-events
 - Description: My new Nuxt module
 -->
 
@@ -14,45 +14,83 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-My new Nuxt module for doing amazing things.
-
+Nuxt Events for global events
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
+<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/@skmd87/nuxt-events?file=playground%2Fapp.vue) -->
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- Global Events
+- Composable
+- Typescript support
 
 ## Quick Setup
 
-1. Add `my-module` dependency to your project
+1. Add `@skmd87/nuxt-events` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D my-module
+pnpm add -D @skmd87/nuxt-events
 
 # Using yarn
-yarn add --dev my-module
+yarn add --dev @skmd87/nuxt-events
 
 # Using npm
-npm install --save-dev my-module
+npm install --save-dev @skmd87/nuxt-events
 ```
 
-2. Add `my-module` to the `modules` section of `nuxt.config.ts`
+2. Add `@skmd87/nuxt-events` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'my-module'
+    '@skmd87/nuxt-events'
   ]
 })
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+## Usage
+
+```
+<template>
+  <div>
+    <h1>Events</h1>  
+    <div>
+      <button
+        color="primary"
+        variant="elevated"
+        @click="emit('test-event', 'from useEvent')"
+      >
+        Send Event (from useEvent)
+      </button>
+      <button
+        color="primary"
+        variant="elevated"
+        @click="$emit('test-event', 'from useNuxtApp')"
+      >
+        Send Event (from
+        useNuxtApp)
+      </button>
+    </div>
+  </div>
+</template>
+  
+<script lang="ts" setup>
+declare module "#NuxtEvents" {
+	interface Events {
+		'test-event': string;
+	}
+}
+const { emit, on } = useEvent()
+
+const { $emit } = useNuxtApp()
+
+on('test-event', (v) => alert(`test-event received ${v}`))
+
+</script> 
+```
 
 ## Development
 
@@ -81,14 +119,14 @@ npm run release
 ```
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/my-module
+[npm-version-src]: https://img.shields.io/npm/v/@skmd87/nuxt-events/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@skmd87/nuxt-events
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/my-module
+[npm-downloads-src]: https://img.shields.io/npm/dm/@skmd87/nuxt-events.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@skmd87/nuxt-events
 
-[license-src]: https://img.shields.io/npm/l/my-module.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/my-module
+[license-src]: https://img.shields.io/npm/l/@skmd87/nuxt-events.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/@skmd87/nuxt-events
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com

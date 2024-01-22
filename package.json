@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
+  "name": "nuxt-events",
   "version": "1.0.1",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "Nuxt Events Module",
+  "repository": "https://github.com/skmd87/nuxt-events",
   "license": "MIT",
   "type": "module",
   "exports": {
