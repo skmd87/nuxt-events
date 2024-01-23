@@ -26,10 +26,8 @@ declare module '@vue/runtime-core' {
 	}
 }
 
-export default defineNuxtPlugin((nuxtApp) => {
-	nuxtApp.provide('emit', emitter.emit)
-	nuxtApp.provide('on', emitter.on)
-	nuxtApp.provide('off', emitter.off)
+export default defineNuxtPlugin(() => {
+
     return {
 		provide: {
 			emit: emitter.emit,
