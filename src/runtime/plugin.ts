@@ -1,22 +1,40 @@
-import mitt from "mitt";
+/// <reference path="./NuxtEvents.d.ts" />
+/// <reference path="../../node_modules/nuxt/dist/app/index" />
 import { defineNuxtPlugin } from "#app";
-import type { Events } from "#NuxtEvents";
-
-// @ts-ignore
-const emitter = mitt<Events>();
+import { emitter } from "./emitter";
 
 declare module "#app" {
-    interface NuxtApp {
-        $on: typeof emitter.on;
-        $emit: typeof emitter.emit;
-    }
+	interface NuxtApp  {
+		$emit: typeof emitter.emit;
+		$on: typeof emitter.on;
+		off: typeof emitter.off;
+	}
+ }
+
+declare module 'vue' {
+	interface ComponentCustomProperties {
+		$emit: typeof emitter.emit;
+		$on: typeof emitter.on;
+		off: typeof emitter.off;
+	}
+ }
+declare module '@vue/runtime-core' {
+	interface ComponentCustomProperties {
+		$emit: typeof emitter.emit;
+		$on: typeof emitter.on;
+		off: typeof emitter.off;
+	}
 }
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
+	nuxtApp.provide('emit', emitter.emit)
+	nuxtApp.provide('on', emitter.on)
+	nuxtApp.provide('off', emitter.off)
     return {
-        provide: {
-            emit: emitter.emit,
-            on: emitter.on
-        },
+		provide: {
+			emit: emitter.emit,
+			on: emitter.on,
+			off: emitter.off
+		},
     };
 });

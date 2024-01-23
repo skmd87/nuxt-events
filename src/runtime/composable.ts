@@ -1,9 +1,13 @@
-import { useNuxtApp } from "#app";
+import { emitter } from "./emitter";
 
-export function useEvents() {
-    const { $on, $emit } = useNuxtApp();
+export function useEvents(): {
+	emit: typeof emitter.emit;
+	on: typeof emitter.on;
+	off: typeof emitter.off;
+} {    
     return {
-        emit: $emit,
-        on: $on,
+        emit: emitter.emit,
+		on: emitter.on,
+		off: emitter.off
     };
 }
