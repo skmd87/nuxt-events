@@ -2,6 +2,26 @@
 
 
 
+## v1.0.6
+
+[compare changes](https://github.com/skmd87/nuxt-events/compare/v1.0.5...v1.0.6)
+
+### 🩹 Fixes
+
+- Remove duplicated fn definitions ([bd82d94](https://github.com/skmd87/nuxt-events/commit/bd82d94))
+
+### 💅 Refactors
+
+- Minor restructure to support typescript ([819a65e](https://github.com/skmd87/nuxt-events/commit/819a65e))
+
+### 🏡 Chore
+
+- **release:** V1.0.5 ([1a94634](https://github.com/skmd87/nuxt-events/commit/1a94634))
+
+### ❤️ Contributors
+
+- Samer Draidi <s.aldraidi@ingotbrokers.com>
+
 ## v1.0.5
 
 [compare changes](https://github.com/skmd87/nuxt-events/compare/v1.0.4...v1.0.5)
