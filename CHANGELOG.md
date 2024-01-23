@@ -20,7 +20,7 @@
 
 ### ❤️ Contributors
 
-- Samer Draidi <s.aldraidi@ingotbrokers.com>
+- Samer Draidi <samer.kmd@gmail.com>
 
 ## v1.0.5
 
@@ -36,7 +36,7 @@
 
 ### ❤️ Contributors
 
-- Samer Draidi <s.aldraidi@ingotbrokers.com>
+- Samer Draidi <samer.kmd@gmail.com>
 
 ## v1.0.4
 
@@ -53,7 +53,7 @@
 
 ### ❤️ Contributors
 
-- Samer Draidi <s.aldraidi@ingotbrokers.com>
+- Samer Draidi <samer.kmd@gmail.com>
 
 ## v1.0.3
 
@@ -70,5 +70,5 @@
 
 ### ❤️ Contributors
 
-- Samer Draidi <s.aldraidi@ingotbrokers.com>
+- Samer Draidi <samer.kmd@gmail.com>
 

@@ -7,7 +7,7 @@ declare module "#app" {
 	interface NuxtApp  {
 		$emit: typeof emitter.emit;
 		$on: typeof emitter.on;
-		off: typeof emitter.off;
+		$off: typeof emitter.off;
 	}
  }
 
@@ -15,14 +15,14 @@ declare module 'vue' {
 	interface ComponentCustomProperties {
 		$emit: typeof emitter.emit;
 		$on: typeof emitter.on;
-		off: typeof emitter.off;
+		$off: typeof emitter.off;
 	}
  }
 declare module '@vue/runtime-core' {
 	interface ComponentCustomProperties {
 		$emit: typeof emitter.emit;
 		$on: typeof emitter.on;
-		off: typeof emitter.off;
+		$off: typeof emitter.off;
 	}
 }
 
